@@ -12,7 +12,7 @@
 @hover_blocks: #262d32;
 
 //font-styles
-@safe-font: tahoma;
+@safe-font: tahoma, serif;
 
 body{
   margin:0;
@@ -25,9 +25,65 @@ header, footer{
 }
 header a, footer a{
   color: @texts_on_dark_phone;
+  text-decoration: none;
 }
-h1, h2, h3, h4{
+main a{
+  color: @p_texts;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5{
   color:@h_texts;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+h1{
+  font-size: 48px;
+  text-align: center;
+}
+h2{
+  font-size: 48px;
+  text-align: center;
+}
+h3, .slider .subtitle{
+  font-size: 24px;
+}
+h4{
+  font-size: 18px;
+}
+h5{
+  font-size: 16px;
+  text-align: center;
+}
+p{
+  font-size: 18px;
+}
+input, textarea{
+  font-size: 18px;
+  font-style: italic;
+  font-family: @safe-font;
+}
+label{
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+}
+.slider{
+  text-transform: uppercase;
+}
+.subtitle {
+  text-align: center;
+}
+#our_work{
+  background-color: @light;
+}
+.container{
+  margin: 0 auto;
+  max-width: 1510px;
+}
+.flex-boxes{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .copyright{
   background-color: @copyright;
