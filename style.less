@@ -22,6 +22,10 @@ body{
 header, footer{
   background-color: @dark;
   color: @texts_on_dark_phone;
+  position: relative;
+}
+header{
+  border-bottom: 4px solid @dark;
 }
 header a, footer a{
   color: @texts_on_dark_phone;
@@ -57,6 +61,9 @@ h5{
   font-size: 16px;
   text-align: center;
 }
+footer h5{
+  color: @texts_on_dark_phone;
+}
 p{
   font-size: 18px;
 }
@@ -76,6 +83,20 @@ ul{
   margin: 0;
   padding: 0;
 }
+li{
+  list-style: none;
+  width: 140px;
+  height: 115px;
+}
+li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+header li a:hover, header li a:active{
+  background-color: @hover_blocks;
+  border-bottom: 4px solid @orange;
+}
 form{
   display: flex;
   flex-direction: column;
@@ -83,13 +104,19 @@ form{
 }
 .slider{
   text-transform: uppercase;
+  position: relative;
 }
 .subtitle {
   text-align: center;
+  max-width: 780px;
+  margin: auto;
 }
 .container{
   margin: 0 auto;
   max-width: 1510px;
+  text-align: center;
+}
+main .container{
   padding: 60px;
 }
 .flex-boxes{
@@ -97,6 +124,7 @@ form{
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
 }
 .copyright{
   background-color: @copyright;
@@ -110,6 +138,11 @@ form{
 .one-advantage{
   width:280px;
 }
+.on_top{
+  position: absolute;
+  right: 10%;
+  top:-65px;
+}
 #our_work{
   background-color: @light;
   background-image: url("images/Landing_tech_03.jpg");
@@ -120,4 +153,39 @@ form{
 }
 #general_slider{
   background-image: url("images/Landing_tech_02.jpg");
+}
+footer section{
+  background-image: url("images/Landing_tech_05.png");
+}
+footer .address p, footer .address h5{
+  text-align: right;
+}
+.make_request{
+  background-color: @orange;
+  width: 400px;
+  height: 80px;
+  border-radius: 10px;
+  display: block;
+  color: @texts_on_dark_phone;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  margin: auto;
+}
+#general_slider .slider::before, #general_slider .slider::after{
+  content: '';
+  width:45px;
+  height: 80px;
+  display: block;
+  position: absolute;
+}
+#general_slider .slider::before{
+  background-image: url("images/Landing_tech_07.png");
+  left:100px;
+  top:40%;
+}
+#general_slider .slider::after{
+  background-image: url("images/Landing_tech_09.png");
+  right: 100px;
+  top:40%;
 }
