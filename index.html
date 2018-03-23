@@ -15,7 +15,7 @@
         </a>
         <nav>
            <ul class="flex-boxes">
-             <li><a href="file:///E:/github/webcom-group/index.html">Главная</a></li>
+             <li><a href="index.html">Главная</a></li>
              <li><a href="#our_work">Портфолио</a></li>
              <li><a href="#our_advantares">Преимущества</a></li>
              <li><a href="#our_advantares">Схема работы</a></li>
@@ -28,24 +28,65 @@
           <br>
           <a href="#" class="orange">+375 (33) 123-45-67</a>
         </div>
-      </container>
+      </div>
     </header>
     <main>
       <article id="general_slider">
         <div class="container">
           <div class="slider">
-            <h1>ГЛАВНЫЙ ЗАГОЛОВОк</h1>
-            <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
-              elit, sed do eiusmod tempor incididunt<br>
-              ut labore et doloremagna aliqua</p>
-            <a href="#" class="button">оформить заявку</a>
-          </div>
-          <div class="slider-dotes flex-boxes">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+          <!--  <div class="slider-dotes flex-boxes">-->
+              <input type="radio" id="btn-1" name="toggle" checked>
+              <input type="radio" id="btn-2" name="toggle">
+              <input type="radio" id="btn-3" name="toggle">
+              <input type="radio" id="btn-4" name="toggle">
+              <input type="radio" id="btn-5" name="toggle">
+              <div class="slider-controls">
+                <label for="btn-1"></label>
+                <label for="btn-2"></label>
+                <label for="btn-3"></label>
+                <label for="btn-4"></label>
+                <label for="btn-5"></label>
+              </div>
+          <!--  </div>-->
+            <div class="slider-inner">
+              <div class="slider-slides">
+                <div class="slider1">
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк</h1>
+                  <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
+                    elit, sed do eiusmod tempor incididunt<br>
+                    ut labore et doloremagna aliqua</h4>
+                  <button class="button">оформить заявку</button>
+                </div>
+                <div class="slider2">
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк2</h1>
+                  <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
+                    elit, sed do eiusmod tempor incididunt<br>
+                    ut labore et doloremagna aliqua</h4>
+                  <button class="button">оформить заявку</button>
+                </div>
+                <div class="slider3">
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк3</h1>
+                  <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
+                    elit, sed do eiusmod tempor incididunt<br>
+                    ut labore et doloremagna aliqua</h4>
+                  <button class="button">оформить заявку</button>
+                </div>
+                <div class="slider4">
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк2</h1>
+                  <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
+                    elit, sed do eiusmod tempor incididunt<br>
+                    ut labore et doloremagna aliqua</h4>
+                  <button class="button">оформить заявку</button>
+                </div>
+                <div class="slider5">
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк3</h1>
+                  <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
+                    elit, sed do eiusmod tempor incididunt<br>
+                    ut labore et doloremagna aliqua</h4>
+                  <button class="button">оформить заявку</button>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="nav-down">
             <a href="#our_work"  title="перейти вниз">
@@ -195,19 +236,31 @@
                 <p><a href="mailto:info@promo-webcom.by"> info@promo-webcom.by</a></p>
               </div>
               <form>
-                <label for="people_name">ВАШЕ ИМЯ</label>
+                <h3>
+                  <label for="people_name">ВАШЕ ИМЯ</label>
+                </h3>
                 <input type="text" id="people_name" name="people_name" placeholder="Иванов Иван">
-                <label for="people_mail">E-MAIL</label>
+                <h3>
+                  <label for="people_mail">E-MAIL</label>
+                </h3>
                 <input type="email" id="people_mail" name="people_mail" placeholder="example@mysite.com">
-                <label for="people_position">ВАША ДОЛЖНОСТЬ</label>
+                <h3>
+                  <label for="people_position">ВАША ДОЛЖНОСТЬ</label>
+                </h3>
                 <input type="text" id="people_position" name="people_position" placeholder="Должность">
-                <label for="your_review">ОТЗЫВ</label>
+                <h3>
+                  <label for="your_review">ОТЗЫВ</label>
+                </h3>
                 <textarea id="your_review" name="your_review" placeholder="Ваше сообщение" rows="5"></textarea>
-                <input type="file" id="people_photo" name="people_photo">
-                <label for="people_photo">ФОТО</label>
-                <label for="captcha">введите код с картинки</label>
+                <input type="file" id="people_photo" name="people_photo" class="no_display">
+                <h3>
+                  <label for="people_photo" class="people_photo">ФОТО</label>
+                </h3>
+                <h3>
+                  <label for="captcha">введите код с картинки</label>
+                </h3>
                 <input type="text" name="captcha" id="captcha">
-                <div>
+                <div class="form_bottom_elements flex-boxes">
                   <img src="images/Landing_tech_39.jpg" alt="captcha">
                   <input type="submit" onclick="###" value="отправить" class="button">
                 </div>
@@ -228,13 +281,13 @@
             <p>Дисклеймер компании</p>
           </div>
           <div>
-            <h5>мы в соцсетях</h5>
+            <h4>мы в соцсетях</h4>
             <div class="sotial_networks">
               <a href="#">
-                <img src="images/Landing_tech_10.png" alt="instagram">
+                <img src="images/Landing_tech_11.png" alt="instagram">
               </a>
               <a href="#">
-                <img src="images/Landing_tech_11.png" alt="twitter">
+                <img src="images/Landing_tech_10.png" alt="twitter">
               </a>
               <a href="#">
                 <img src="images/Landing_tech_13.png" alt="facebook">
@@ -242,7 +295,7 @@
             </div>
           </div>
           <div class="address">
-            <h5>АДРЕС</h5>
+            <h4>АДРЕС</h4>
             <p>г. Минск, ул. Скрыганова, 6А,<br> 4 этаж</p>
           </div>
         </div>
