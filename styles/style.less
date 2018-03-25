@@ -12,7 +12,10 @@
 @hover_blocks: #262d32;
 @p_lights: #e5e5e5;
 //font-styles
-@safe-font: tahoma, san-serif;
+@safe-font: Helvetica, sans-serif;
+//font-sizes
+@p_size: 16px;
+@nav_size: 14px;
 
 //general styles **********************************************************
 body{
@@ -24,6 +27,7 @@ header, footer{
   background-color: @dark;
   color: @texts_on_dark_phone;
   position: relative;
+  width: 100%;
 }
 header{
   border-bottom: 4px solid @dark;
@@ -47,7 +51,7 @@ h1, h2, h3, h4, h5{
   padding: 0;
 }
 h1{
-  font-size: 46px;
+  font-size: 44px;
   text-align: center;
   letter-spacing: 20px;
   margin: 75px 0 0;
@@ -57,7 +61,7 @@ h1::after{
   display: block;
   width: 820px;
   height: 15px;
-  background-image: url("images/Landing_tech_23.png");
+  background-image: url("../images/Landing_tech_23.png");
   margin: 50px auto 55px;
 }
 h2{
@@ -74,7 +78,7 @@ h4{
   line-height: 36px;
 }
 h5{
-  font-size: 16px;
+  font-size: @p_size;
   text-align: center;
 }
 h2::after, footer .address p::before, .footer_logo p::before, .sotial_networks::before{
@@ -82,11 +86,11 @@ h2::after, footer .address p::before, .footer_logo p::before, .sotial_networks::
   display: block;
   width: 30px;
   height: 6px;
-  background-image: url("images/Landing_tech_08.png");
+  background-image: url("../images/Landing_tech_08.png");
   margin: 27px auto;
 }
 p{
-  font-size: 18px;
+  font-size: @p_size;
   color: @p_texts;
   line-height: 36px;
 }
@@ -163,8 +167,9 @@ header li a{
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  font-size: @nav_size;
 }
-header li a:hover, header li a:active{
+header li a:hover, header li .active{
   background-color: @hover_blocks;
   border-bottom: 4px solid @orange;
   color:@hover_texts;
@@ -175,20 +180,31 @@ header li{
 header .container{
   padding: 0 60px;
 }
-#on_top{
+#logo{
   margin-right: 20px;
+}
+.fixed_nav{
+  position: fixed;
+  z-index: 2;
+}
+.telephones a{
+  font-weight: bold;
+  line-height: 40px;
 }
 // slider ******************************************************************
 .slider{
   text-transform: uppercase;
   position: relative;
-  margin: auto 50px;
+  margin: 117px auto 0;
+  height: 720px;
+  width: 1200px;
 }
 #general_slider, footer{
   border-bottom: 4px solid @orange;
 }
 #general_slider{
-  background-image: url("images/Landing_tech_02.jpg");
+  background-image: url("../images/Landing_tech_02.jpg");
+  background-position: bottom;
 }
 .slider .button{
   margin: 165px auto 145px;
@@ -207,24 +223,17 @@ header .container{
   position: absolute;
 }
 #general_slider .slider::before{
-  background-image: url("images/Landing_tech_07.png");
+  background-image: url("../images/Landing_tech_07.png");
   left:100px;
   top:50%;
 }
 #general_slider .slider::after{
-  background-image: url("images/Landing_tech_09.png");
+  background-image: url("../images/Landing_tech_09.png");
   right: 100px;
   top:50%;
 }
 .slider input[type=radio]{
   display: none;
-}
-.slider-dotes-nav li{
-  margin-bottom: 9px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: @grey-dark;
 }
 .nav-down{
   text-align: center;
@@ -239,15 +248,14 @@ header .container{
 }
 .slider-slides div {
     float: left;
-    width: 1400px;
-    height: 695px;
+    width: 1200px;
 }
 .slider-controls {
     position: absolute;
     width: 100%;
     left: 0;
     bottom: -40px;
-    z-index: 100;
+    z-index: 1;
     text-align: center;
 }
 .slider-controls label {
@@ -270,16 +278,27 @@ header .container{
    transform:translate(0);
 }
 #btn-2:checked ~ .slider-inner .slider-slides {
-   transform:translate(-1400px);
+   transform:translate(-1200px);
 }
 #btn-3:checked ~ .slider-inner .slider-slides {
-   transform:translate(-2800px);
+   transform:translate(-2400px);
 }
 #btn-4:checked ~ .slider-inner .slider-slides {
-   transform:translate(-4200px);
+   transform:translate(-3600px);
 }
 #btn-5:checked ~ .slider-inner .slider-slides {
-   transform:translate(-5600px);
+   transform:translate(-4800px);
+}
+// aside ***********************************************************
+.slider-dotes-nav li{
+  margin-bottom: 9px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: @grey-dark;
+}
+.slider-dotes-nav li:hover, aside .active{
+  background-color: @orange;
 }
 // our_work *************************************************************
 .work{
@@ -303,12 +322,16 @@ header .container{
   bottom: 0px;
   width: 100%;
 }
+.photo_hover h5, .photo_hover p{
+  margin: 10px 50px;
+  text-align: left;
+}
 .portfolio >.work:hover .photo_hover{
   display: block;
 }
 #our_work{
   background-color: @light;
-  background-image: url("images/Landing_tech_03.jpg");
+  background-image: url("../images/Landing_tech_03.jpg");
   border-bottom: 2px solid @grey-light;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -333,8 +356,8 @@ header .container{
 #our_contacts{
   align-items: flex-start;
   justify-content: space-around;
-  max-width: 940px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 50px auto auto;
 }
 .no_display{
   display: none;
@@ -344,11 +367,14 @@ header .container{
   width: 48px;
   height: 60px;
   background-color: @orange;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   text-align: center;
   color: @texts_on_dark_phone;
   margin-right: 15px;
+  cursor: pointer;
 }
 .people_photo{
   display: flex;
@@ -359,6 +385,7 @@ form .button{
   height: 60px;
   font-style: normal;
   font-weight: normal;
+  cursor: pointer;
 }
 .form_bottom_elements{
   align-items: flex-end;
@@ -382,12 +409,12 @@ form .button{
   top:-90px;
 }
 footer section{
-  background-image: url("images/Landing_tech_05.png");
+  background-image: url("../images/Landing_tech_05.png");
 }
 footer .address p, footer .address h4{
   text-align: right;
 }
-footer h4{
+footer h4, footer p{
   color: @texts_on_dark_phone;
 }
 footer a{

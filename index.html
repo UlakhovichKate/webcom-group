@@ -3,25 +3,42 @@
   <head>
       <meta charset="utf-8">
       <title>webcom media</title>
-      <link rel="stylesheet/less" type="text/css" href="style.less" />
-      <script src="less.min.js"></script>
-      <script src="scripts.js"></script>
+      <link rel="stylesheet/less" type="text/css" href="styles/style.less" />
+      <link rel="stylesheet/less" type="text/css" href="styles/style_media.css" />
+      <script src="scripts/less.min.js"></script>
+      <script src="scripts/script.js"></script>
   </head>
   <body>
-    <header>
+    <header class="fixed_nav">
       <div class="container flex-boxes">
-        <a href="#" title="перейти на главную" id="on_top">
+        <a href="#" title="перейти на главную" id="logo">
           <img src="images/Landing_tech_03.png" alt="Логотип" >
         </a>
-        <nav>
-           <ul class="flex-boxes">
-             <li><a href="index.html">Главная</a></li>
-             <li><a href="#our_work">Портфолио</a></li>
-             <li><a href="#our_advantares">Преимущества</a></li>
-             <li><a href="#our_advantares">Схема работы</a></li>
-             <li><a href="#our_review">Отзывы</a></li>
-             <li><a href="#our_review">Контакты</a></li>
+        <!--<nav>
+           <ul class="flex-boxes navigation" id="nav" >
+             <li><a href="#logo" class="navigation_li active" >Главная</a></li>
+             <li><a href="#our_work" class="navigation_li">Портфолио</a></li>
+             <li><a href="#our_advantares" class="navigation_li">Преимущества</a></li>
+             <li><a href="#our_advantares" class="navigation_li">Схема работы</a></li>
+             <li><a href="#our_review" class="navigation_li">Отзывы</a></li>
+             <li><a href="#our_review" class="navigation_li">Контакты</a></li>
           </ul>
+        </nav>-->
+        <nav class="menu_back" >
+						<input id="main-menu-state" type="checkbox" checked/>
+						<div class="flex-boxes menu_mob">
+							<label class="main-menu-btn" for="main-menu-state">
+							  <span class="main-menu-btn-icon"></span>
+							</label>
+						</div>
+						<ul class="flex-boxes navigation" id="main-menu">
+              <li><a href="#logo" class="navigation_li active" >Главная</a></li>
+              <li><a href="#our_work" class="navigation_li">Портфолио</a></li>
+              <li><a href="#our_advantares" class="navigation_li">Преимущества</a></li>
+              <li><a href="#our_advantares" class="navigation_li">Схема работы</a></li>
+              <li><a href="#our_review" class="navigation_li">Отзывы</a></li>
+              <li><a href="#our_review" class="navigation_li">Контакты</a></li>
+						</ul>
         </nav>
         <div class="telephones">
           <a href="#" class="orange">+375 (29) 123-45-67</a>
@@ -34,20 +51,18 @@
       <article id="general_slider">
         <div class="container">
           <div class="slider">
-          <!--  <div class="slider-dotes flex-boxes">-->
-              <input type="radio" id="btn-1" name="toggle" checked>
-              <input type="radio" id="btn-2" name="toggle">
-              <input type="radio" id="btn-3" name="toggle">
-              <input type="radio" id="btn-4" name="toggle">
-              <input type="radio" id="btn-5" name="toggle">
-              <div class="slider-controls">
-                <label for="btn-1"></label>
-                <label for="btn-2"></label>
-                <label for="btn-3"></label>
-                <label for="btn-4"></label>
-                <label for="btn-5"></label>
-              </div>
-          <!--  </div>-->
+            <input type="radio" id="btn-1" name="toggle" checked>
+            <input type="radio" id="btn-2" name="toggle">
+            <input type="radio" id="btn-3" name="toggle">
+            <input type="radio" id="btn-4" name="toggle">
+            <input type="radio" id="btn-5" name="toggle">
+            <div class="slider-controls">
+              <label for="btn-1"></label>
+              <label for="btn-2"></label>
+              <label for="btn-3"></label>
+              <label for="btn-4"></label>
+              <label for="btn-5"></label>
+            </div>
             <div class="slider-inner">
               <div class="slider-slides">
                 <div class="slider1">
@@ -72,14 +87,14 @@
                   <button class="button">оформить заявку</button>
                 </div>
                 <div class="slider4">
-                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк2</h1>
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк4</h1>
                   <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
                     elit, sed do eiusmod tempor incididunt<br>
                     ut labore et doloremagna aliqua</h4>
                   <button class="button">оформить заявку</button>
                 </div>
                 <div class="slider5">
-                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк3</h1>
+                  <h1>ГЛАВНЫЙ ЗАГОЛОВОк5</h1>
                   <h4 class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing<br>
                     elit, sed do eiusmod tempor incididunt<br>
                     ut labore et doloremagna aliqua</h4>
@@ -161,8 +176,8 @@
       </article>
       <aside>
         <nav>
-          <ul class="slider-dotes-nav">
-            <li><a href="#general_slider"></a></li>
+          <ul class="slider-dotes-nav navigation ">
+            <li class="active"><a href="#general_slider" ></a></li>
             <li><a href="#our_work"></a></li>
             <li><a href="#our_advantares"></a></li>
             <li><a href="#our_advantares"></a></li>
@@ -239,11 +254,11 @@
                 <h3>
                   <label for="people_name">ВАШЕ ИМЯ</label>
                 </h3>
-                <input type="text" id="people_name" name="people_name" placeholder="Иванов Иван">
+                <input type="text" id="people_name" name="people_name" placeholder="Иванов Иван" required>
                 <h3>
                   <label for="people_mail">E-MAIL</label>
                 </h3>
-                <input type="email" id="people_mail" name="people_mail" placeholder="example@mysite.com">
+                <input type="email" id="people_mail" name="people_mail" placeholder="example@mysite.com" required>
                 <h3>
                   <label for="people_position">ВАША ДОЛЖНОСТЬ</label>
                 </h3>
@@ -251,7 +266,7 @@
                 <h3>
                   <label for="your_review">ОТЗЫВ</label>
                 </h3>
-                <textarea id="your_review" name="your_review" placeholder="Ваше сообщение" rows="5"></textarea>
+                <textarea id="your_review" name="your_review" placeholder="Ваше сообщение" rows="5" required></textarea>
                 <input type="file" id="people_photo" name="people_photo" class="no_display">
                 <h3>
                   <label for="people_photo" class="people_photo">ФОТО</label>
@@ -271,7 +286,7 @@
       </article>
     </main>
     <footer>
-      <a href="#on_top"  title="перейти наверх страницы" class="on_top">
+      <a href="#general_slider"  title="перейти наверх страницы" class="on_top">
         <img src="images/Landing_tech_06.png" alt="наверх" title="перейти наверх страницы">
       </a>
       <section>
