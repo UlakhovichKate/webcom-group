@@ -432,3 +432,89 @@ footer .sotial_networks::before{
 .footer_logo p::before{
   margin: 20px 0;
 }
+// media ********************************************************
+#main-menu-state {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  right: 10px;
+  opacity: 0;
+}
+.main-menu-btn {
+  opacity: 0;
+}
+.main-menu-btn-icon,
+.main-menu-btn-icon:before,
+.main-menu-btn-icon:after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 2px;
+  width: 24px;
+  background: #fff;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.main-menu-btn-icon:before {
+  content: '';
+  top: -7px;
+  left: 0;
+}
+.main-menu-btn-icon:after {
+  content: '';
+  top: 7px;
+  left: 0;
+}
+@media screen and (max-width: 1200px) {
+  header .navigation{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fixed_nav{
+    position: relative;
+  }
+  .main-menu-btn {
+    opacity: 1;
+  }
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: block;
+  }
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+    height: 0;
+    background: transparent;
+  }
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  #main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after {
+    top: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: none;
+  }
+  #main-menu-state:checked ~ #main-menu {
+    display: block;
+  }
+  #our_work .flex-boxes{
+    justify-content: center;
+  }
+  #main-menu{
+    position: absolute;
+    top:80px;
+    left: 0px;
+    width: 100%;
+    background-color: @dark;
+  }
+  #main-menu li{
+    width: 100%;
+  }
+}
